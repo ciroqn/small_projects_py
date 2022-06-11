@@ -4,7 +4,7 @@ pyg = 'ay'
 
 original = raw_input('Enter a word:')
 
-# Checks input is actually a word (no non-alphabet characters, which is what .isalpha() check for)
+# Checks input is actually a word (no non-alphabet characters, which is what .isalpha() checks for)
 if len(original) > 0 and original.isalpha():
   word = original.lower()
   first = word[0]
