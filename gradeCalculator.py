@@ -48,3 +48,15 @@ def get_letter_grade(score):
 lloyd_score = get_average(lloyd)
 
 print get_letter_grade(lloyd_score)
+
+# list containing all students
+class_ = [lloyd, alice, tyler]
+
+# function to average class marks
+def get_class_average(class_list):
+  results = []
+  for student in class_list:
+    results.append(get_average(student))
+  return average(results)
+
+print get_class_average(class_)
