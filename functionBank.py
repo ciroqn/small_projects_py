@@ -46,3 +46,11 @@ def censor(text, word):
   print " ".join(list)
 
 censor("this is absolute baloney", "baloney") # prints: 'this is absolute *******'
+
+# Counts how many times a number occurs in a sequence
+def count(sequence, item):
+  count = 0
+  for num in sequence:
+    if num == item:
+      count += 1
+  return count
