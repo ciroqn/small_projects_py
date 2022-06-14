@@ -9,3 +9,12 @@ def reverse(text):
     reverse.append(index)
     count -= 1
   return ''.join(reverse)
+
+# Excise vowels from text
+def anti_vowel(text):
+  vowels = 'aeiouAEIOU'
+  result = ''
+  for char in text:
+    if char not in vowels:
+      result += char   
+  return result
