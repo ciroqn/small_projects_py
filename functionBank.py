@@ -69,3 +69,11 @@ def purify(numbers_list):
     if num % 2 == 0:
       pure_list.append(num)
   return pure_list
+
+# Remove duplicate numbers in number list
+def remove_duplicates(list):
+  new_list = []
+  for num in list:
+    if num not in new_list:
+      new_list.append(num)
+  return new_list
