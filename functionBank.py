@@ -54,3 +54,11 @@ def count(sequence, item):
     if num == item:
       count += 1
   return count
+
+# Removes odd numbers from sequence
+def purify(numbers_list):
+  pure_list = []
+  for num in numbers_list:
+    if num % 2 == 0:
+      pure_list.append(num)
+  return pure_list
