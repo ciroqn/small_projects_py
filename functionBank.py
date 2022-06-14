@@ -55,6 +55,13 @@ def count(sequence, item):
       count += 1
   return count
 
+# Returns product of all the numbers in a list
+def product(list):
+  product = 1
+  for num in list:
+    product *= num
+  return product
+
 # Removes odd numbers from sequence
 def purify(numbers_list):
   pure_list = []
