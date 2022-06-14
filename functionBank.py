@@ -77,3 +77,18 @@ def remove_duplicates(list):
     if num not in new_list:
       new_list.append(num)
   return new_list
+
+# Finding median of list (note to self: divide by 2.0 to give a float)
+import math
+def median(list):
+  sort = sorted(list)
+  print sort
+  length = len(sort)
+  if length % 2 != 0:
+    indx_num = (length-1)/2
+    return sort[indx_num]
+  else:
+    indx_higher = (length)/2 
+    indx_lower = indx_higher - 1
+    avg = (sort[indx_lower]+sort[indx_higher]) / 2.0
+    return avg
