@@ -35,3 +35,14 @@ def scrabble_score(word):
       if char == key:
         sum += score[key]
   return sum
+
+# Censor word from text (does not account for puncutation). 
+def censor(text, word):
+  list = text.split(" ")
+  for indx, x in enumerate(list):
+    if x == word:
+      list[indx] = '*'*len(word)
+  return " ".join(list)
+  print " ".join(list)
+
+censor("this is absolute baloney", "baloney") # prints: 'this is absolute *******'
