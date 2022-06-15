@@ -1,4 +1,7 @@
-"""A calendar that can be edited via the command line. The user can add, update, view and delete events. The basic structure is a 'dictionary'."""
+"""A calendar that can be edited via the command line. The user can add, update, view and delete events. The basic structure is a 'dictionary'.
+
+Two modules are imported: 1) sleep and 2) strftime. 'sleep' pauses the program for the time indicated in the brackets (in seconds), and 'strftime' allows
+one to input all aspects of time (e.g. '%Y' for year, '%S' for seconds etc. using shortcut notation - see docs)."""
 
 
 from time import sleep, strftime
