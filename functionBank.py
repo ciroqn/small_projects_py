@@ -99,3 +99,11 @@ def append_sum(lst):
     add_last_two = lst[-1]+lst[-2]
     lst.append(add_last_two)
   return lst
+
+# If number of items in list is greater than n
+def more_than_n(lst, item, n):
+  num_of_item = lst.count(item)
+  if num_of_item > n:
+    return True
+  else:
+    return False
