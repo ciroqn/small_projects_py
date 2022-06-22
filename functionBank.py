@@ -176,3 +176,16 @@ def exponents(bases, powers):
     for power in powers:
       new_list.append(base**power)
   return new_list
+
+# takes two lists of numbers, and returns the list with the larger sum. If sums are equal, 'lst1' is returned
+def larger_sum(lst1, lst2):
+  lst1_sum = 0
+  lst2_sum = 0
+  for num in lst1:
+    lst1_sum += num
+  for num in lst2:
+    lst2_sum += num
+  if max(lst1_sum, lst2_sum) == lst1_sum:
+    return lst1
+  else:
+    return lst2
