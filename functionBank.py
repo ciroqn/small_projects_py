@@ -112,3 +112,10 @@ def more_than_n(lst, item, n):
 def combine_sort(lst1, lst2):
   combine_list = lst1 + lst2
   return sorted(combine_list)
+
+# Removing middle part of list (i.e. between start and end parameters)
+def remove_middle(lst, start, end):
+  length = end - start
+  for i in range(length+1):
+    lst.pop(start)
+  return lst
