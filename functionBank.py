@@ -150,3 +150,13 @@ def middle_element(lst):
     lower = int((len(lst)/2.0) - 0.5)
     upper = int((len(lst)/2.0) + 0.5)
     return int((lst[lower]+lst[upper])/2)
+
+# counts number of items in list that are divisible by 10 
+def divisible_by_ten(nums):
+  count = 0
+  for num in nums:
+    if num % 10 == 0:
+      count += 1
+    else:
+      continue
+  return count
