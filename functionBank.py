@@ -119,3 +119,7 @@ def remove_middle(lst, start, end):
   for i in range(length+1):
     lst.pop(start)
   return lst
+
+#... alternatively
+def remove_middle(lst, start, end):
+  return lst[:start] + lst[end+1:]
