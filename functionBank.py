@@ -189,3 +189,11 @@ def larger_sum(lst1, lst2):
     return lst1
   else:
     return lst2
+  
+# Has same functionality as max()
+def max_num(nums):
+  max_val = nums[0]
+  for index, num in enumerate(nums):
+    if nums[index] > max_val:
+      max_val = nums[index]
+  return max_val
