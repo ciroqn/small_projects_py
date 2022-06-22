@@ -108,7 +108,7 @@ def more_than_n(lst, item, n):
   else:
     return False
 
-# Add two lists and sort
+# Add two lists and sort combined list
 def combine_sort(lst1, lst2):
   combine_list = lst1 + lst2
   return sorted(combine_list)
