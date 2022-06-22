@@ -140,3 +140,13 @@ def double_index(lst, index):
     return lst
   else:
     return lst
+  
+# Returning item at middle index. If len(list) is even, then the average of the middle two is taken
+def middle_element(lst):
+  if len(lst) % 2 != 0:
+    middle = int((len(lst)-1)/2)
+    return lst[middle] 
+  else:
+    lower = int((len(lst)/2.0) - 0.5)
+    upper = int((len(lst)/2.0) + 0.5)
+    return int((lst[lower]+lst[upper])/2)
