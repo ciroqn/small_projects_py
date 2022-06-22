@@ -133,7 +133,7 @@ def more_frequent_item(lst, item1, item2):
   else:
     return item2
   
- # double element at index and return list (if index is valid)
+# Double element at index and return list (if index is valid) - it modifies original list
 def double_index(lst, index):
   if index <= len(lst)-1:
     lst[index] *= 2
