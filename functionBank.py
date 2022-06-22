@@ -92,3 +92,10 @@ def median(list):
     indx_lower = indx_higher - 1
     avg = (sort[indx_lower]+sort[indx_higher]) / 2.0
     return avg
+
+# Add last two numbers in list and append to list and repeat three times
+def append_sum(lst):
+  for i in range(3):
+    add_last_two = lst[-1]+lst[-2]
+    lst.append(add_last_two)
+  return lst
