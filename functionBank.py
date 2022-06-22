@@ -206,3 +206,11 @@ def same_values(lst1, lst2):
       if num1 == num2 and index1 == index2:
         common_index_list.append(index1)
   return common_index_list
+
+# Takes two lists and returns True if lst1 is the reverse of lst2 (and vice versa)
+def reversed_list(lst1, lst2):
+  if len(lst1) == len(lst2):
+    for index, num in enumerate(lst1):
+      if lst1[index] != lst2[-index-1]:
+        return False
+    return True
