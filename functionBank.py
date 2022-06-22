@@ -168,3 +168,11 @@ def odd_indices(lst):
     if index % 2 != 0:
       odd_index_list.append(item)
   return odd_index_list
+
+# function that takes in two lists. First list has each item a power of each number in the second list
+def exponents(bases, powers):
+  new_list = []
+  for base in bases:
+    for power in powers:
+      new_list.append(base**power)
+  return new_list
