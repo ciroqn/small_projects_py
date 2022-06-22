@@ -160,3 +160,11 @@ def divisible_by_ten(nums):
     else:
       continue
   return count
+
+# Adds items with odd index to new list:
+def odd_indices(lst):
+  odd_index_list = []
+  for index, item in enumerate(lst):
+    if index % 2 != 0:
+      odd_index_list.append(item)
+  return odd_index_list
