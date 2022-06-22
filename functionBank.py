@@ -123,3 +123,12 @@ def remove_middle(lst, start, end):
 #... alternatively
 def remove_middle(lst, start, end):
   return lst[:start] + lst[end+1:]
+
+# Return item1 if frequency in list is more than (or equal to item2)
+def more_frequent_item(lst, item1, item2):
+  item1_freq = lst.count(item1)
+  item2_freq = lst.count(item2)
+  if item1_freq >= item2_freq:
+    return item1
+  else:
+    return item2
