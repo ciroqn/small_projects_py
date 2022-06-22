@@ -197,3 +197,12 @@ def max_num(nums):
     if nums[index] > max_val:
       max_val = nums[index]
   return max_val
+
+# Takes two number lists and returns a list of indices which have matching items
+def same_values(lst1, lst2):
+  common_index_list = []
+  for index1, num1 in enumerate(lst1):
+    for index2, num2 in enumerate(lst2):
+      if num1 == num2 and index1 == index2:
+        common_index_list.append(index1)
+  return common_index_list
