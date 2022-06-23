@@ -214,3 +214,15 @@ def reversed_list(lst1, lst2):
       if lst1[index] != lst2[-index-1]:
         return False
     return True
+  
+# Returns list of common letters in two input strings
+def common_letters(string_one, string_two):
+  common_letterz = []
+  for letter1 in string_one:
+    for letter2 in string_two:
+      if letter1 == letter2:
+        if letter1 not in common_letterz:
+          common_letterz.append(letter1)
+        else:
+          continue
+  return common_letterz
