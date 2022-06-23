@@ -226,3 +226,29 @@ def common_letters(string_one, string_two):
         else:
           continue
   return common_letterz
+
+# Username and password geenrators example based on first and last names
+# Takes first three letters of first name and first four letters of last name and concatenates (with exceptions)
+def username_generator(first_name, last_name):
+  username = ""
+  if len(first_name) < 3 or len(last_name) < 4:
+    username = first_name + last_name
+  first_str = first_name[:3]
+  last_str = last_name[:4]
+  username = first_str + last_str
+  return username
+
+#takes last letter of username and attaches it to beginning of username
+def password_generator(username):
+  last_letter_username = username[-1]
+  password = last_letter_username + username[:-1]
+  return password
+
+#reverses the username
+def password_generator(username):
+  password = ""
+  for index, element in enumerate(username):
+    password += username[-index-1]
+  return password
+
+
