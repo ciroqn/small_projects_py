@@ -353,3 +353,15 @@ def values_that_are_keys(my_dictionary):
         if key not in val_key_list:
           val_key_list.append(key)
   return val_key_list
+
+# Functions returns key in dictionary that has the largest value in the dictionary parameter
+def max_key(my_dictionary):
+  max_key = 0
+  max_value = 0
+  for key in my_dictionary.keys():
+    if my_dictionary[key] > max_value:
+      max_value = my_dictionary[key]
+      max_key = key
+    else: 
+      continue
+  return max_key
