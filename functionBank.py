@@ -274,3 +274,12 @@ def count_multi_char_x(word, x):
   list_split = word.split(x)
   num = len(list_split)
   return num - 1
+
+# Function takes word, and two letters ('start' and 'end'). The substring *between* these two indices is returned. If letter not in word, word is returned
+def substring_between_letters(word, start, end):
+  start_index = word.find(start)
+  end_index = word.find(end)
+  if start_index == -1 or end_index == -1:
+    return word
+  substring = word[start_index+1: end_index]
+  return substring
