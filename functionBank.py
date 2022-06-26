@@ -327,3 +327,13 @@ def add_exclamation(word):
     word += "!"
     length += 1
   return word
+
+# Sums values of keys that are even
+ef sum_even_keys(my_dictionary):
+  count = 0
+  for key in my_dictionary.keys():
+    if key % 2 == 0:
+      count += my_dictionary[key]
+    else:
+      continue
+  return count
