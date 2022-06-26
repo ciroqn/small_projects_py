@@ -260,3 +260,11 @@ def unique_english_letters(word):
       if letter not in unique:
         unique.append(letter)
   return len(unique)
+
+# Variation of above - takes word and 'x' (letter that we want counted in word)
+def count_char_x(word, x):
+  counter = 0
+  for letter in word:
+    if letter == x:
+      counter += 1
+  return counter
