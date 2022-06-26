@@ -365,3 +365,10 @@ def max_key(my_dictionary):
     else: 
       continue
   return max_key
+
+# Creates dictionary with the words in the 'word' parameter (which should be a list) as keys; the keys' values are equal to len(word)
+def word_length_dictionary(words):
+  new_dict = {}
+  for word in words:
+    new_dict[word] = len(word)
+  return new_dict
