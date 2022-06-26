@@ -308,3 +308,12 @@ def reverse_string(word):
   for i in range(-1, -len(word)-1, -1):
     new_string += word[i]
   return new_string
+
+# Spoonerism function: swaps first characters of each word 
+def make_spoonerism(word1, word2):
+  first_char_w1 = word1[0]
+  remaining_char_w1 = word1[1:]
+  first_char_w2 = word2[0]
+  remaining_char_w2 = word2[1:]
+  spoonerism = first_char_w2 + remaining_char_w1 + " " + first_char_w1 + remaining_char_w2
+  return spoonerism
