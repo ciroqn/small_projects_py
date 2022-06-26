@@ -382,3 +382,11 @@ def frequency_dictionary(words):
       if word1 == word2:
         new_dict[word1] += 1
   return new_dict
+
+# Counts how many unique values there are in the dictionary parameter
+def unique_values(my_dictionary):
+  unique = []
+  for value in my_dictionary.values():
+    if value not in unique:
+      unique.append(value)
+  return len(unique)
