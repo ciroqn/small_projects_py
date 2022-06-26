@@ -1,7 +1,5 @@
 # Creating relevant classes for restaurant business and instantiating classes for individual object manipulation
 
-# *still working...
-
 
 class Menu:
   def __init__(self, name, items, start_time, end_time):
@@ -36,7 +34,9 @@ class Franchise:
       return "The available menus are: \n" + "\n".join(available_menu)
 
 class Business:
-  pass
+  def __init__(self, name, franchises):
+    self.name = name
+    self.franchises = franchises
 
 # Instantiate Menu Class - brunch
 brunch = Menu("Brunch", {'pancakes': 7.50, 'waffles': 9.00, 'burger': 11.00, 'home fries': 4.50, 'coffee': 1.50, 'espresso': 3.00, 'tea': 1.00, 'mimosa': 10.50, 'orange juice': 3.50}, 1100, 1600)
@@ -60,5 +60,18 @@ print(brunch.calculate_bill(["pancakes", "home fries", "coffee"]))
 print(early_bird.calculate_bill(["salumeria plate", "mushroom ravioli (vegan)"]))
 
 # Test available_menus method in Franchise class
-print(flagship_store.available_menus(1200))
-print(flagship_store.available_menus(1700))
+#print(flagship_store.available_menus(1200))
+#print(flagship_store.available_menus(1700))
+
+# Set up first business
+basta_fazoolin = Business("Basta Fazoolin' with my #Heart", [flagship_store, new_installment])
+
+# Create new menu
+arepas_menu = Menu("Take a' Arepa", {'arepa pabellon': 7.00, 'pernil arepa': 8.50, 'guayanes arepa': 8.00, 'jamon arepa': 7.50}, 1000, 2000)
+
+# Create new franchise
+arepas_place = Franchise("189 Fitzgerald Avenue", [brunch, arepas_menu, early_bird, dinner, kids])
+
+# Create new business
+take_a_arepa = Business("Take a' Arepa", [arepas_place])
+
