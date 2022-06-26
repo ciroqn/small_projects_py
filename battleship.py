@@ -1,4 +1,4 @@
-"""User gets four guesses at where the battelship might be hidden on a board of 5x5"""
+#User gets four guesses at where the battelship might be hidden on a board of 5x5
 
 
 from random import randint
