@@ -317,3 +317,13 @@ def make_spoonerism(word1, word2):
   remaining_char_w2 = word2[1:]
   spoonerism = first_char_w2 + remaining_char_w1 + " " + first_char_w1 + remaining_char_w2
   return spoonerism
+
+# Add exclamation marks to fill space until len(word) == 20
+def add_exclamation(word):
+  if len(word) > 20:
+    return word
+  length = len(word)
+  while length < 20:
+    word += "!"
+    length += 1
+  return word
