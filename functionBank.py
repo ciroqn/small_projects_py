@@ -301,3 +301,10 @@ def every_other_letter(word):
     letters_list.append(word[index])
     index += 2
   return "".join(letters_list)
+
+# Reverses string
+def reverse_string(word):
+  new_string = ""
+  for i in range(-1, -len(word)-1, -1):
+    new_string += word[i]
+  return new_string
