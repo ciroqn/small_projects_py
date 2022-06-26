@@ -268,3 +268,9 @@ def count_char_x(word, x):
     if letter == x:
       counter += 1
   return counter
+
+# Counts how many instances there are of 'x' (which, in this case is a string with len(string) > 1) in 'word'
+def count_multi_char_x(word, x):
+  list_split = word.split(x)
+  num = len(list_split)
+  return num - 1
