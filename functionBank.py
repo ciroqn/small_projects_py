@@ -343,3 +343,13 @@ def add_ten(my_dictionary):
   for key in my_dictionary.keys():
     my_dictionary[key] += 10
   return my_dictionary
+
+# Returns a list of keys that also appear as values in a dictionary (given as parameter).
+def values_that_are_keys(my_dictionary):
+  val_key_list = []
+  for key in my_dictionary.keys():
+    for value in my_dictionary.values():
+      if key == value:
+        if key not in val_key_list:
+          val_key_list.append(key)
+  return val_key_list
