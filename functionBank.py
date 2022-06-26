@@ -283,3 +283,12 @@ def substring_between_letters(word, start, end):
     return word
   substring = word[start_index+1: end_index]
   return substring
+
+# Function takes in a sentence and 'x' which is a number. If every word in the sentence is >= x, it returns True, otherwise False.
+def x_length_words(sentence, x):
+  split_list = sentence.split(" ")
+  for word in split_list:
+    if len(word) < x:
+      return False
+    else:
+      return True
