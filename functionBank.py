@@ -251,4 +251,12 @@ def password_generator(username):
     password += username[-index-1]
   return password
 
-
+# Counts number of unique letters in a given word
+letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+def unique_english_letters(word):
+  unique = []
+  for letter in word:
+    if letter in letters:
+      if letter not in unique:
+        unique.append(letter)
+  return len(unique)
