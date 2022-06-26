@@ -390,3 +390,15 @@ def unique_values(my_dictionary):
     if value not in unique:
       unique.append(value)
   return len(unique)
+
+# Takes in dictionary; creates new dictionary where key is first letter of surnames in dictionary parameter, and its new value is teh number of people 
+# who have the same first letter in their surname. e.g if parameter is {"Bond": ["James", "Jim"], "Johnson": ["Samuel", "Samantha", "Simone"]} would 
+# return {"B": 2, "J": 3}
+def count_first_letter(names):
+  new_dict = {}
+  for key in names.keys():
+    if key[0] not in new_dict:
+      new_dict[key[0]] = 0
+    if key[0] in new_dict:
+      new_dict[key[0]] += len(names[key])
+  return new_dict
