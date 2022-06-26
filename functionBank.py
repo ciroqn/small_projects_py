@@ -372,3 +372,13 @@ def word_length_dictionary(words):
   for word in words:
     new_dict[word] = len(word)
   return new_dict
+
+# Returns a dictionary whose keys are words in the list parameter ('words'); the keys' values are equal to the frequency of their occurrence in the list
+def frequency_dictionary(words):
+  new_dict = {}
+  for word1 in words:
+    new_dict[word1] = 0
+    for word2 in words:
+      if word1 == word2:
+        new_dict[word1] += 1
+  return new_dict
