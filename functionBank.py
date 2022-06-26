@@ -292,3 +292,12 @@ def x_length_words(sentence, x):
       return False
     else:
       return True
+    
+ # Return every other letter (could be done for i in range(...) also)
+def every_other_letter(word):
+  letters_list = []
+  index = 0
+  while index < len(word):
+    letters_list.append(word[index])
+    index += 2
+  return "".join(letters_list)
