@@ -337,3 +337,9 @@ ef sum_even_keys(my_dictionary):
     else:
       continue
   return count
+
+# Adding 10 to every value in a dictionary
+def add_ten(my_dictionary):
+  for key in my_dictionary.keys():
+    my_dictionary[key] += 10
+  return my_dictionary
