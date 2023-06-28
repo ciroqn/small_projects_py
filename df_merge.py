@@ -59,4 +59,10 @@ all_data_no_purchase_number = all_data[all_data.purchase_time.isnull()].user_id.
 
 percentage_did_not_purchase = all_data_checkout_number / all_data_no_purchase_number
 
-print(percentage_did_not_purchase)
+# print(percentage_did_not_purchase)
+
+# time from intial visit to final purchase
+all_data['avg time'] = all_data.purchase_time - all_data.visit_time
+
+# avg time to purchase
+# print(all_data['avg time'].mean())
