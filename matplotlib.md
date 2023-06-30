@@ -61,3 +61,20 @@ plt.plot(time, costs, color="#82edc9", marker='s')
 
 plt.show()
 ```
+
+## `plt.axis()`
+
+This is used to 'zoom' into a particular range on the plot. The general syntax is `plt.axis([x_min, x_max, y_min, y_max)`. The example below shows this:
+
+```py
+from matplotlib import pyplot as plt
+
+x = range(12)
+y = [3000, 3005, 3010, 2900, 2950, 3050, 3000, 3100, 2980, 2980, 2920, 3010]
+plt.plot(x, y)
+
+#your code here
+plt.axis([0, 12, 2900, 3100])
+
+plt.show()
+```
