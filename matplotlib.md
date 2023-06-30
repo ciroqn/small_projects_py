@@ -32,11 +32,11 @@ plt.show()
 ## Styling
 
 ```py
-# Line colours (either specify using words or HEX code)
+# Line colours (either specify using words or HEX code) ------------------------------------
 plt.plot(days, money_spent, color='blue')
 plt.plot(days, money_spent_2, color='#AAAFHUS')
 
-# Line styling
+# Line styling ------------------------------------
 # Dashed:
 plt.plot(x_values, y_values, linestyle='--')
 # Dotted:
@@ -44,11 +44,20 @@ plt.plot(x_values, y_values, linestyle=':')
 # No line:
 plt.plot(x_values, y_values, linestyle='')
 
-# Marker styling
+# Marker styling ------------------------------------
 # A circle:
 plt.plot(x_values, y_values, marker='o')
 # A square:
 plt.plot(x_values, y_values, marker='s')
 # A star:
 plt.plot(x_values, y_values, marker='*')
+```
+
+An example:
+
+```py
+lt.plot(time, revenue, color="purple", linestyle='--')
+plt.plot(time, costs, color="#82edc9", marker='s')
+
+plt.show()
 ```
