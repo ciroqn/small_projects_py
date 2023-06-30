@@ -28,3 +28,27 @@ plt.plot(time, costs)
 
 plt.show()
 ```
+
+## Styling
+
+```py
+# Line colours (either specify using words or HEX code)
+plt.plot(days, money_spent, color='blue')
+plt.plot(days, money_spent_2, color='#AAAFHUS')
+
+# Line styling
+# Dashed:
+plt.plot(x_values, y_values, linestyle='--')
+# Dotted:
+plt.plot(x_values, y_values, linestyle=':')
+# No line:
+plt.plot(x_values, y_values, linestyle='')
+
+# Marker styling
+# A circle:
+plt.plot(x_values, y_values, marker='o')
+# A square:
+plt.plot(x_values, y_values, marker='s')
+# A star:
+plt.plot(x_values, y_values, marker='*')
+```
