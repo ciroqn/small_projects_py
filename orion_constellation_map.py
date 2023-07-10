@@ -14,3 +14,11 @@ fig = plt.figure()
 fig.add_subplot(1,1,1)
 plt.scatter(x,y)
 plt.show()
+
+# 3D scatter (x,y,z) of Orion constellation
+fig_3d = plt.figure()
+# adding axes for plot and specifying 3D projection
+fig_3d.add_subplot(1,1,1, projection="3d")
+# add data to 3D projection
+consetellation3d = plt.scatter(x,y,z)
+plt.show()
