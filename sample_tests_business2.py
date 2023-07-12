@@ -54,3 +54,12 @@ labels = ['Whippet'] * len(whippet_weights) + ['Terrier'] * len(terrier_weights)
 tukey_results = pairwise_tukeyhsd(all_weight_data, labels, 0.05)
 
 print tukey_results
+
+#Multiple Comparison of Means - Tukey HSD,FWER=0.05
+#==============================================
+# group1  group2 meandiff  lower  upper  reject
+#----------------------------------------------
+#Pitbull Terrier  -13.24  -16.728 -9.752  True 
+#Pitbull Whippet  -3.34    -6.828 0.148  False 
+#Terrier Whippet   9.9     6.412  13.388  True 
+#----------------------------------------------
