@@ -2,7 +2,7 @@
 
 import numpy as np
 import fetchmaker as f
-from scipy.stats import binom_test, f_oneway
+from scipy.stats import binom_test, f_oneway, chi2_contingency
 from statsmodels.stats.multicomp import pairwise_tukeyhsd
 
 # get_weight()
