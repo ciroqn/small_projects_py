@@ -63,3 +63,32 @@ print tukey_results
 #Pitbull Whippet  -3.34    -6.828 0.148  False 
 #Terrier Whippet   9.9     6.412  13.388  True 
 #----------------------------------------------
+
+# finding poodle and shihtzu colours
+poodle_colours = f.get_color("poodle")
+shihtzu_colours = f.get_color("shihtzu")
+
+# num of occurrences of colour X
+num_brown_poodles = np.count_nonzero(poodle_colours == "brown")
+num_black_poodles = np.count_nonzero(poodle_colours == "black")
+num_gold_poodles = np.count_nonzero(poodle_colours == "gold")
+num_grey_poodles = np.count_nonzero(poodle_colours == "grey")
+num_white_poodles = np.count_nonzero(poodle_colours == "white")
+
+num_brown_shihtzu = np.count_nonzero(shihtzu_colours == "brown")
+num_black_shihtzu = np.count_nonzero(shihtzu_colours == "black")
+num_gold_shihtzu = np.count_nonzero(shihtzu_colours == "gold")
+num_grey_shihtzu = np.count_nonzero(shihtzu_colours == "grey")
+num_white_shihtzu = np.count_nonzero(shihtzu_colours == "white")
+
+# chi square contingency table 
+colour_table = [[num_black_poodles, num_black_shihtzu],
+  [num_brown_poodles, num_brown_shihtzu],
+  [num_gold_poodles, num_gold_shihtzu],
+  [num_grey_poodles, num_grey_shihtzu],
+  [num_white_poodles, num_white_shihtzu]]
+
+chi2, pval_col, dof, expected = chi2_contingency(colour_table)
+
+print pval_col
+# 0.00530240829324 (null rejected -colours dissimilar)
