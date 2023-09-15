@@ -38,3 +38,15 @@ print(player_to_points)
 
 # prints, for e.g.: {'player1': 29, 'wordNERD': 32, 'Lexi Con': 31, 'Prof Reader': 31}
 
+
+####### NOTE: score_word() can be done much simpler than above:
+
+def score_word_alt(word):
+  point_total = 0
+  for letter in word:
+    if letter in letters_to_points:
+      point_total += letters_to_points[letter]
+    else:
+      point_total += 0
+  return point_total
+
