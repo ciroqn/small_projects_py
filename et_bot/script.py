@@ -1,5 +1,11 @@
 # testing an alien bot
 
+"""
+Regex patterns used:
+r'.*\s*your planet.*' (has to have words 'your planet' in the utterance to trigger the bot's 'describe_planet_intent()' method
+
+"""
+
 # importing regex and random libraries
 import re
 import random
@@ -21,7 +27,8 @@ class AlienBot:
     )
 
   def __init__(self):
-    self.alienbabble = {'describe_planet_intent': r'',
+    
+    self.alienbabble = {'describe_planet_intent': r'.*\s*your planet.*',
                         'answer_why_intent': r'',
                         'cubed_intent': r''
                             }
@@ -52,11 +59,17 @@ class AlienBot:
 
     # while the make_exit method is False, continue convo
     while not self.make_exit(reply):
-      reply = input("How are you? ")
+      reply = input(self.match_reply(reply))
 
   # Define .match_reply() below:
   def match_reply(self, reply):
-    pass
+    # match regex pattern with user's reply
+    for intent, regex_pattern in self.alienbabble.items():
+      found_match = re.match(regex_pattern, reply)
+
+      # match intents and trigger relevant method
+      if found_match and intent == 'describe_planet_intent':
+        return self.describe_planet_intent()
 
   # Define .describe_planet_intent():
   def describe_planet_intent(self):
