@@ -4,6 +4,7 @@
 Regex patterns used:
 r'.*\s*your planet.*' (has to have words 'your planet' in the utterance to trigger the bot's 'describe_planet_intent()' method
 r'why are.*' (must start with 'why are')
+r'.*cube.* (\d+)' (where (\d+) is the entity and is passed to the relevant method. note, this must have a space before the brackets).
 """
 
 # importing regex and random libraries
@@ -30,7 +31,7 @@ class AlienBot:
     
     self.alienbabble = {'describe_planet_intent': r'.*\s*your planet.*',
                         'answer_why_intent': r'why are.*',
-                        'cubed_intent': r''
+                        'cubed_intent': r'.*cube.* (\d+)'
                             }
 
   # Define .greet() below:
@@ -72,6 +73,9 @@ class AlienBot:
         return self.describe_planet_intent()
       elif found_match and intent == 'answer_why_intent':
         return self.answer_why_intent()
+      # passing in digit which can be obtained using .groups()[0]
+      elif found_match and intent == 'cubed_intent':
+        return self.cubed_intent(found_match.groups()[0])
 
   # Define .describe_planet_intent():
   def describe_planet_intent(self):
@@ -82,11 +86,18 @@ class AlienBot:
 
   # Define .answer_why_intent():
   def answer_why_intent(self):
-    return "Inside .answer_why_intent()"
+    responses = ("I come in peace. ", "I am here to collect data on your pleant and its inhabitants. ", "I heard the coffee is good. ")
+
+    # return random choice from tuple
+    return random.choice(responses)
        
   # Define .cubed_intent():
   def cubed_intent(self, number):
-    return "Inside .cubed_intent()"
+    # convert to integer and calculate cube
+    number = int(number)
+    cubed_number = number**3
+
+    return f'The cube of {number} is {cubed_number}. Isn\'t that cool? '
 
   # Define .no_match_intent():
   def no_match_intent(self):
