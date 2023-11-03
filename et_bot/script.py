@@ -39,11 +39,20 @@ class AlienBot:
 
   # Define .make_exit() here:
   def make_exit(self, reply):
-    pass
+    # check reply is an exit command and act accordingly
+    for exit_command in self.exit_commands:
+      if reply in exit_command:
+        print("Ok, have a nice Earth day!")
+        return True
 
   # Define .chat() next:
   def chat(self):
-    pass
+    # randomly select question for user to answer
+    reply = input(random.choice(self.random_questions)).lower()
+
+    # while the make_exit method is False, continue convo
+    while not self.make_exit(reply):
+      reply = input("How are you? ")
 
   # Define .match_reply() below:
   def match_reply(self, reply):
