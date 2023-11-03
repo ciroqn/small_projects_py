@@ -76,6 +76,8 @@ class AlienBot:
       # passing in digit which can be obtained using .groups()[0]
       elif found_match and intent == 'cubed_intent':
         return self.cubed_intent(found_match.groups()[0])
+      else:
+        self.no_match_intent()
 
   # Define .describe_planet_intent():
   def describe_planet_intent(self):
@@ -101,7 +103,9 @@ class AlienBot:
 
   # Define .no_match_intent():
   def no_match_intent(self):
-    return "Inside .no_match_intent()"
+    responses = ("Please tell me more. ", "Tell me more! ", "Why do you say that? ", "I see. Can you elaborate? ", "Interesting. Can you tell me more? ", "I see. How do you think? ", "Why? ", "How do you think I feel when you say that? ")
+
+    return random.choice(responses)
 
 # instance of AlienBot below:
 alienBot = AlienBot()
