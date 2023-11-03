@@ -3,7 +3,7 @@
 """
 Regex patterns used:
 r'.*\s*your planet.*' (has to have words 'your planet' in the utterance to trigger the bot's 'describe_planet_intent()' method
-
+r'why are.*' (must start with 'why are')
 """
 
 # importing regex and random libraries
@@ -29,7 +29,7 @@ class AlienBot:
   def __init__(self):
     
     self.alienbabble = {'describe_planet_intent': r'.*\s*your planet.*',
-                        'answer_why_intent': r'',
+                        'answer_why_intent': r'why are.*',
                         'cubed_intent': r''
                             }
 
@@ -70,10 +70,15 @@ class AlienBot:
       # match intents and trigger relevant method
       if found_match and intent == 'describe_planet_intent':
         return self.describe_planet_intent()
+      elif found_match and intent == 'answer_why_intent':
+        return self.answer_why_intent()
 
   # Define .describe_planet_intent():
   def describe_planet_intent(self):
-    return "Inside .describe_planet_intent()"
+    responses = ("My planet is a utopia of diverse organisms and species. ", "I am from Opidipus, the capital of the Wayward Galaxies. ")
+
+    # return random choice from tuple
+    return random.choice(responses)
 
   # Define .answer_why_intent():
   def answer_why_intent(self):
