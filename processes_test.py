@@ -83,3 +83,17 @@ Asynchronous Programming Elapsed Time: 1.0012725550041068 seconds
 Threading Elapsed Time: 1.0015706840058556 seconds
 Multiprocessing Elapsed Time: 1.0041735120030353 seconds
 """
+
+# ------- defining lists for examples and calling functions ----------
+l1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]  # Three lists we are trying to calculate average on
+l2 = [2, 4, 6, 8, 10]
+l3 = [1, 3, 5, 7, 9, 11]
+main_sequential(l1, l2, l3)
+
+# calling async
+loop = asyncio.get_event_loop()
+loop.run_until_complete(main_async(l1, l2, l3))
+
+# calling other processes
+main_threading(l1, l2, l3)
+main_multiprocessing(l1, l2, l3)
