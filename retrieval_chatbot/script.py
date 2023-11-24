@@ -62,7 +62,10 @@ class ChatBot:
   def respond(self, user_message):
     # get best-fit response from above method
     best_response = self.find_intent_match(responses, user_message)
-    print(best_response)
+    # get entities/nouns from user message
+    entity = self.find_entities(user_message)
+    # format response with best-fit entity
+    print(best_response.format(entity))
     input_message = input("Do you have another question, mate? ")
     return input_message
   
