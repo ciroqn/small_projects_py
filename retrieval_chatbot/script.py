@@ -35,7 +35,9 @@ class ChatBot:
     # get response from imported file, which contains pre-defined responses
     return responses[response_index]
  
-  #define .find_entities():
+  #define .find_entities(), which tags user message and extracts nouns//entities. The word2vec model turns tokens into vectors and 
+  # finds the similarities between the two vectors. The word with the largest similarity is chosen to fill {blank_spot} in one of the 
+  # pre-defined responses:
   def find_entities(self, user_message):
     # get tags (parts of speech)
     tagged_user_message = pos_tag(preprocess(user_message))
@@ -56,7 +58,7 @@ class ChatBot:
       return word2vec_result[-1][0]
     return blank_spot
  
-  #define .respond():
+  #define .respond(), which determines the intent of the user message (i.e. what is the user asking?):
   def respond(self, user_message):
     # get best-fit response from above method
     best_response = self.find_intent_match(responses, user_message)
