@@ -27,6 +27,13 @@ class ChatBot:
   def find_intent_match(self, responses, user_message):
     bow_user_message = Counter(preprocess(user_message))
     processed_responses = [Counter(preprocess(response)) for response in responses]
+
+    # similarity comparison
+    similarity_list = [compare_overlap(bow_user_message, processed_response) for processed_response in processed_responses]
+    # get index of best-fit response
+    response_index = similarity_list.index(max(similarity_list))
+    # get response from imported file, which contains pre-defined responses
+    return responses[response_index]
  
   #define .find_entities():
  
