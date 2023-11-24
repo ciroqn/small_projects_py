@@ -1,3 +1,12 @@
+"""
+A closed-domain ChatBot that selects a pre-defined response and sends it to the user. This is done by tokenising the user's message, 
+extracting the entities (nouns) -- which provide context -- through tagging, and finally using the word2vec model on this tagging to find a
+best-fit response. 
+"""
+
+
+
+
 from collections import Counter
 from responses import responses, blank_spot
 from helper_functions import preprocess, compare_overlap, pos_tag, extract_nouns, compute_similarity
