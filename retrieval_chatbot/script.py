@@ -38,6 +38,12 @@ class ChatBot:
   #define .find_entities():
  
   #define .respond():
+  def respond(self, user_message):
+    # get best-fit response from above method
+    best_response = self.find_intent_match(responses, user_message)
+    print(best_response)
+    input_message = input("Do you have another question, mate? ")
+    return input_message
   
 
 #initialize ChatBot instance below:
