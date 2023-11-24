@@ -4,9 +4,6 @@ extracting the entities (nouns) -- which provide context -- through tagging, and
 best-fit response. 
 """
 
-
-
-
 from collections import Counter
 from responses import responses, blank_spot
 from helper_functions import preprocess, compare_overlap, pos_tag, extract_nouns, compute_similarity
