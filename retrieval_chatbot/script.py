@@ -22,7 +22,11 @@ class ChatBot:
     while not self.make_exit(user_message):
       user_message = self.respond(user_message)
 
-  #define .find_intent_match():
+  #define .find_intent_match(), which creates a BoW (tokenised) message and creates a dictionary of word frequency. This is done, too, 
+  # for the pre-defined messages. Now this is ready for comparing similarities:
+  def find_intent_match(self, responses, user_message):
+    bow_user_message = Counter(preprocess(user_message))
+    processed_responses = [Counter(preprocess(response)) for response in responses]
  
   #define .find_entities():
  
