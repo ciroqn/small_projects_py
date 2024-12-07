@@ -7,8 +7,8 @@ mainWindow = tkinter.Tk()
 
 mainWindow.title("Calculator")
 mainWindow.geometry('640x480-8-200')
-# add x padding
-mainWindow['padx'] = 8
+# this is used at the end of the file where the minsize of the window is set
+mainWindowPadding = 10
 
 # loop through to create Button keys
 keys = [[('C', 1), ('CE', 2)],
@@ -43,5 +43,10 @@ for keyRow in keys:
         button = tkinter.Button(keyPad, text=key)
         # Can use sticky=tkinter.E + tkinter.W
         button.grid(row=row, column=index, sticky='ew')
+
+# the width and height of keys don't 'exist' until mainloop is activated. Hence the .update() method. Only then can the minszie of the 
+# window be specified using the .winfo properties on the various frames.
+mainWindow.update()
+mainWindow.minsize(keyPad.winfo_width() + mainWindowPadding, resultWindow.winfo_height() + keyPad.winfo_height())
 
 tkinter.mainloop()
