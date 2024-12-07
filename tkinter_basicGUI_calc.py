@@ -44,9 +44,11 @@ for keyRow in keys:
         # Can use sticky=tkinter.E + tkinter.W
         button.grid(row=row, column=index, sticky='ew')
 
-# the width and height of keys don't 'exist' until mainloop is activated. Hence the .update() method. Only then can the minszie of the 
-# window be specified using the .winfo properties on the various frames.
+# the width and height of keys don't 'exist' until mainloop is activated. Hence the .update() method. Only then can the minszie and
+# maxsize of the window be specified using the .winfo properties on the various frames.
 mainWindow.update()
 mainWindow.minsize(keyPad.winfo_width() + mainWindowPadding, resultWindow.winfo_height() + keyPad.winfo_height())
+mainWindow.maxsize(keyPad.winfo_width() + mainWindowPadding + 25,
+                   resultWindow.winfo_height() + keyPad.winfo_height() + 25)
 
 tkinter.mainloop()
