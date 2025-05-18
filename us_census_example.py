@@ -73,6 +73,9 @@ print(us_census.columns)
 # convert race columns into numeric types (and getting rid of '%')
 races = ['Hispanic', 'White', 'Black', 'Native', 'Asian', 'Pacific']
 
+# could use:
+# us_census[races] = us_census[races].replace('[\%]', '', regex=True).apply(pd.to_numeric)
+
 for col in us_census.columns:
   if col in races:
     us_census[col] = us_census[col].replace('[\%]', '', regex=True)
