@@ -1,5 +1,5 @@
 from roster import student_roster
-from classroom_organizer import ClassroomOrganizer
+from classroom_organiser import ClassroomOrganizer
 import itertools
 
 student_roster_iter = iter(student_roster)
